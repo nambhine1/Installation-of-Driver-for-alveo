@@ -1,15 +1,12 @@
 
-# 3. Compiling, Linking, and Running the Application
+# Compiling, Linking, and Running the Application
 
 ## Introduction
-
-A Vitis core development kit application is a heterogeneous application with two distinct components: the software program and the FPGA binary. These two components are built using dedicated compilation chains. This lab describes how to compile, link, and run the VADD example from the command line.
-
+In vitis the application program split into two part. the first is host code and the second is kernel function. THe host is running on CPU while the kernel function is running on hardware (FPGA).So vitis provides a core development kit application Which allow us to build the host code and the kernel function seperatly. In vitis the host code and the kernel function are build seperatly . 
 ## Building the Application
 
 ### Building the Host Program
-
-The host application, written in C/C++ using OpenCL™ API calls and can be built using the standard GCC compiler. Each source file is compiled to an object file (O) and linked with the Xilinx Runtime (XRT) shared library to create the executable (EXE). For details on GCC and its associated command line options, refer to [Using the GNU Compiler Collection (GCC)](https://gcc.gnu.org/onlinedocs/gcc/).
+The host application, written in C/C++ using OpenCL API calls and can be built using the standard GCC compiler. Each source file is compiled to an object file (O) and linked with the Xilinx Runtime (XRT) shared library to create the executable (EXE). If you want to know a little bit about GCC you can refer directly to (https://gcc.gnu.org/onlinedocs/gcc/).
 
 To build the host code, use the following XCPP command for the `./reference-files/src` files.
 
