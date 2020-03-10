@@ -8,10 +8,19 @@ In vitis the application program split into two part. the first is host code and
 ### Building the Host Program
 The host application, written in C/C++ using OpenCL API calls and can be built using the standard GCC compiler. Each source file is compiled to an object file (O) and linked with the Xilinx Runtime (XRT) shared library to create the executable (EXE). If you want to know a little bit about GCC you can refer directly to (https://gcc.gnu.org/onlinedocs/gcc/).
 
-To build the host code, use the following XCPP command for the `./reference-files/src` files.
+To build the host code, make sure that you are in the right directory in which you have the source code of host and kernel, check if the  source code is inside your directory using the following command 
+
+ ```bash
+ls 
+   ```
+   THe host.cpp and the vadd.cpp should be there so you can compile and link the host code using the following command,in this 
+   
+   input : host.cpp
+   
+   output : host
 
    ```bash
-g++ -I$XILINX_XRT/include/ -I$XILINX_VIVADO/include/ -Wall -O0 -g -std=c++11 ./src/host.cpp  -o 'host'  -L$XILINX_XRT/lib/ -lOpenCL -lpthread -lrt -lstdc++
+g++ -I$XILINX_XRT/include/ -I$XILINX_VIVADO/include/ -Wall -O0 -g -std=c++11 ./host.cpp  -o 'host'  -L$XILINX_XRT/lib/ -lOpenCL -lpthread -lrt -lstdc++
    ```
 
 This command specifies the required libraries and include files for Xilinx Runtime (XRT), the Vivado tools, and the OpenCL API. For more information on building the host, refer to the [Building an Application](/docs/Pathway3/BuildingAnApplication.md) lab in the  Essential Concepts for Building and Running the Accelerated Application tutorial.
@@ -27,7 +36,7 @@ In the following command, the build target is for software emulation. You can al
 * Use the following commands for compiling the hardware kernel for the VADD example.
 
    ```
-   v++ -t sw_emu --config design.cfg -c -k vadd -I'../src' -o'vadd.xilinx_u200_xdma_201830_2.xo' './src/vadd.cpp'
+   v++ -t sw_emu --config design.cfg -c -k vadd -I'./src' -o'vadd.xilinx_u200_xdma_201830_2.xo' './vadd.cpp'
    ```
 
 * Use the following commands for linking the hardware kernel for the VADD example.
