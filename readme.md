@@ -1,14 +1,3 @@
-﻿<table>
- <tr>
-   <td align="center"><img src="https://www.xilinx.com/content/dam/xilinx/imgs/press/media-kits/corporate/xilinx-logo.png" width="30%"/><h1>2019.2 Vitis™ Application Acceleration Development Flow Tutorials</h1>
-   <a href="https://github.com/Xilinx/SDAccel-Tutorials/branches/all">See SDAccel™ Development Environment 2019.1 Tutorials</a>
-   </td>
- </tr>
- <tr>
- <td align="center"><h1>My First Program</h1>
- </td>
- </tr>
-</table>
 
 # 3. Compiling, Linking, and Running the Application
 
@@ -179,10 +168,3 @@ The `Makefile` provided requires you to specify the build TARGET, the hardware D
    ```
    make check TARGET=hw DEVICE=xilinx_u200_xdma_201830_2 VER=host_cpp
    ```
-
-The next step in this tutorial is to [profile the application](./profile_debug.md).
-</br>
-<hr/>
-<p align="center"><b><a href="/docs/vitis-getting-started/">Return to Getting Started Pathway</a> — <a href="./README.md">Return to Start of Tutorial</a></b></p>
-
-<p align="center"><sup>Copyright&copy; 2019 Xilinx</sup></p>
